@@ -13,9 +13,6 @@ app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] =False
 app.secret_key='jose';
 items= [{"name":"chair","price":15.99}];
 
-@app.before_first_request
-def create_table():
-    db.create_all();
 
 jwt = JWT(app,authenticate,identity) #/auth: we send it user name and password
 
